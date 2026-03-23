@@ -87,17 +87,19 @@
             display: block;
         }
 
-        /* Carousel UI Components */
+        /* Carousel Layouts */
         .carousel-container { 
             position: relative; width: 100%; background-color: #000; 
             border: 8px solid white; box-shadow: 15px 15px 0px rgba(101, 92, 91, 0.1); 
             overflow: hidden; margin: 0 auto;
         }
-        .proof-carousel { aspect-ratio: 1050 / 590; width: 100%; max-width: 1050px; }
+
+        .carousel-personas { aspect-ratio: 1024 / 768; max-width: 1024px; }
+        .carousel-design { aspect-ratio: 1920 / 1080; max-width: 1080px; }
 
         .slide-track { display: flex; height: 100%; transition: transform 0.5s ease; }
         .slide { min-width: 100%; height: 100%; }
-        .slide img { width: 100%; height: 100%; object-fit: cover; }
+        .slide img { width: 100%; height: 100%; object-fit: contain; background-color: #fff; }
 
         .prev, .next {
             cursor: pointer; position: absolute; top: 50%; width: auto; margin-top: -22px;
@@ -134,13 +136,26 @@
 
         .proof-col { width: 100%; display: flex; flex-direction: column; align-items: center; }
 
-        .watch-btn { 
+        /* Prototype Section Styling */
+        .demo-section { margin-top: 30px; display: flex; flex-direction: column; align-items: center; width: 100%; }
+        .prototype-preview-img { 
+            width: 100%; 
+            max-width: 1050px; 
+            border: 8px solid white; 
+            box-shadow: 15px 15px 0px rgba(101, 92, 91, 0.15); 
+            margin-bottom: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .prototype-preview-img:hover { transform: scale(1.01); }
+
+        .launch-btn { 
             display: inline-block; padding: 12px 40px; background-color: transparent; 
             color: #816B6E !important; border: 2px solid #816B6E; text-decoration: none; 
             font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.2em; 
             transition: all 0.3s ease; 
         }
-        .watch-btn:hover { background-color: #816B6E; color: white !important; transform: rotate(-2deg); }
+        .launch-btn:hover { background-color: #816B6E; color: white !important; transform: rotate(-2deg); }
 
         footer { text-align: center; padding: 40px; color: #655C5B; font-size: 0.9em; border-top: 1px solid #DDBDBE; }
         .footer-table-wrapper { display: flex; justify-content: center; margin-bottom: 20px; }
@@ -164,7 +179,7 @@
                         <ul class="dropdown-content">
                             <li><a href="https://cornelia-manda.github.io/videography/">Videography</a></li>
                             <li><a href="https://cornelia-manda.github.io/branding/">Branding</a></li>
-                            <li><a href="#">Web and App</a></li>
+                            <li><a href="https://cornelia-manda.github.io/web-app/">Web and App</a></li>
                             <li><a href="#">Graphic Design</a></li>
                         </ul>
                     </li>
@@ -174,7 +189,7 @@
         </header>
 
         <section class="project-hero">
-            <a href="https://cornelia-manda.github.io/projects/" class="back-button">← Back to Projects</a>
+            <a href="https://cornelia-manda.github.io/web-app/" class="back-button">← Back to Web & App</a>
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="project-tags"><span>UI/UX Design</span><span>Web & App</span></div>
@@ -197,7 +212,7 @@
                 </div>
                 <div class="proof-col">
                     <div class="static-proof-container">
-                        <img src="BudgetBunny-solution-overview.png" alt="Visual overview of the BudgetBunny solution">
+                        <img src="BudetBunny-solution-overview.png" alt="Visual overview of the BudgetBunny solution">
                     </div>
                 </div>
             </div>
@@ -210,7 +225,7 @@
                     <p>Through our collaborative effort, our team developed three primary personas to guide our design decisions. These personas ensured we addressed the specific pain points identified in our interviews.</p>
                 </div>
                 <div class="proof-col">
-                    <div class="carousel-container proof-carousel" id="carousel-personas">
+                    <div class="carousel-container carousel-personas" id="carousel-personas">
                         <div class="slide-track">
                             <div class="slide"><img src="BB-persona-1.png" alt="John Cena Persona"></div>
                             <div class="slide"><img src="BB-persona-2.png" alt="Lola Bunny Persona"></div>
@@ -228,13 +243,13 @@
             <div class="section-body">
                 <div class="text-col">
                     <p>Our team of 3 followed a rigorous double diamond framework. We successfully fostered a healthy and efficient team environment and attitudes where everyone was comfortable sharing thoughts and opinions. Through productive in person work sessions, we effectively delegated tasks and consistently sought one another's opinions to ensure project cohesion.</p>
-                    <p>This collaborative culture allowed us to seamlessly transition from initial paper sketches and functional requirement mapping to a robust high fidelity Figma prototype showcasing end to end interactions.</p>
+                    <p>This collaborative culture allowed us to seamlessly transition from initial paper sketching and low fidelity task mapping to a robust high fidelity Figma prototype showcasing end to end interactions.</p>
                 </div>
                 <div class="proof-col">
-                    <div class="carousel-container proof-carousel" id="carousel-design">
+                    <div class="carousel-container carousel-design" id="carousel-design">
                         <div class="slide-track">
-                            <div class="slide"><img src="BB-sketches-1.png" alt="Low fidelity paper sketches and task mapping"></div>
-                            <div class="slide"><img src="BB-figma-1.png" alt="High fidelity prototype development in Figma"></div>
+                            <div class="slide"><img src="BB-sketches-1.png" alt="Low fidelity sketches and mapping"></div>
+                            <div class="slide"><img src="BB-figma-1.png" alt="High fidelity Figma development"></div>
                         </div>
                         <a class="prev" onclick="moveSlide('carousel-design', -1)">❮</a>
                         <a class="next" onclick="moveSlide('carousel-design', 1)">❯</a>
@@ -255,7 +270,7 @@
                 </div>
                 <div class="proof-col">
                     <div class="static-proof-container">
-                        <img src="BB-identity-overview.png" alt="Design system and brand assets">
+                        <img src="BB-identity-overview.png" alt="Visual identity guide">
                     </div>
                 </div>
             </div>
@@ -274,11 +289,9 @@
         <section class="content-section section-white">
             <div class="section-title"><h2>Interactive Prototype</h2></div>
             <div class="section-body">
-                <div class="proof-col">
-                    <div class="static-proof-container" style="margin-bottom: 40px; cursor: pointer;" onclick="window.open('https://www.figma.com/proto/cRoz83DledyaOkjVEIwPN9/GBDA-210---BudgetBunny?node-id=1-67&starting-point-node-id=1%3A67', '_blank')">
-                        <img src="BudgetBunny-Prototype-Preview.png" alt="BudgetBunny Figma Preview">
-                    </div>
-                    <a href="https://www.figma.com/proto/cRoz83DledyaOkjVEIwPN9/GBDA-210---BudgetBunny?node-id=1-67&starting-point-node-id=1%3A67" target="_blank" class="watch-btn">Launch Live Figma Prototype</a>
+                <div class="demo-section">
+                    <img src="BudgetBunny-Prototype-Preview.png" alt="BudgetBunny Figma Preview" class="prototype-preview-img" onclick="window.open('https://www.figma.com/proto/cRoz83DledyaOkjVEIwPN9/GBDA-210---BudgetBunny?node-id=1-67&starting-point-node-id=1%3A67', '_blank')">
+                    <a href="https://www.figma.com/proto/cRoz83DledyaOkjVEIwPN9/GBDA-210---BudgetBunny?node-id=1-67&starting-point-node-id=1%3A67" target="_blank" class="launch-btn">Launch Live Figma Prototype</a>
                 </div>
             </div>
         </section>
