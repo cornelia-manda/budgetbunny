@@ -44,6 +44,8 @@
         nav li { display: inline-block; margin-left: 40px; position: relative; vertical-align: middle; }
         nav a { color: #655C5B !important; font-size: 1.1em; display: inline-block; padding: 10px 0; }
         nav a:hover { color: white !important; cursor: pointer; }
+        
+        /* HIGHLIGHT: Main 'Projects' link */
         nav > ul > li:nth-child(3) > a { color: white !important; }
 
         .dropdown-content {
@@ -53,6 +55,10 @@
         }
         .dropdown-content li { display: block; margin: 0; }
         .dropdown-content a { color: #655C5B !important; padding: 12px 20px; display: block; font-size: 1.1em; font-family: "Playfair Display", serif; }
+        
+        /* HIGHLIGHT: 'Web and App' link inside dropdown */
+        .dropdown-content li:nth-child(3) a { color: white !important; }
+
         .dropdown-content a:hover { background-color: #E0E2DF; color: #816B6E !important; }
         .dropdown:hover .dropdown-content { display: block; }
 
@@ -87,7 +93,7 @@
             display: block;
         }
 
-        /* Carousel Layouts */
+        /* Carousel Containers */
         .carousel-container { 
             position: relative; width: 100%; background-color: #000; 
             border: 8px solid white; box-shadow: 15px 15px 0px rgba(101, 92, 91, 0.1); 
@@ -110,7 +116,6 @@
         .next { right: 0; }
         .prev:hover, .next:hover { background-color: #816B6E; }
 
-        /* Static Layout Components */
         .static-proof-container {
             width: 100%;
             max-width: 1050px;
@@ -120,7 +125,6 @@
         }
         .static-proof-container img { width: 100%; display: block; }
 
-        /* Content Section Styling */
         .content-section { padding: 80px; }
         .section-light { background-color: #E0E2DF; }
         .section-white { background-color: white; }
@@ -136,7 +140,6 @@
 
         .proof-col { width: 100%; display: flex; flex-direction: column; align-items: center; }
 
-        /* Prototype Section Styling */
         .demo-section { margin-top: 30px; display: flex; flex-direction: column; align-items: center; width: 100%; }
         .prototype-preview-img { 
             width: 100%; 
@@ -248,8 +251,8 @@
                 <div class="proof-col">
                     <div class="carousel-container carousel-design" id="carousel-design">
                         <div class="slide-track">
-                            <div class="slide"><img src="BB-sketches-1.png" alt="Low fidelity sketches and mapping"></div>
-                            <div class="slide"><img src="BB-figma-1.png" alt="High fidelity Figma development"></div>
+                            <div class="slide"><img src="BB-sketches-1.png" alt="Low fidelity paper sketches and task mapping"></div>
+                            <div class="slide"><img src="BB-figma-1.png" alt="High fidelity prototype development in Figma"></div>
                         </div>
                         <a class="prev" onclick="moveSlide('carousel-design', -1)">❮</a>
                         <a class="next" onclick="moveSlide('carousel-design', 1)">❯</a>
@@ -270,7 +273,7 @@
                 </div>
                 <div class="proof-col">
                     <div class="static-proof-container">
-                        <img src="BB-identity-overview.png" alt="Visual identity guide">
+                        <img src="BB-identity-overview.png" alt="Design system and brand assets">
                     </div>
                 </div>
             </div>
