@@ -87,7 +87,7 @@
             display: block;
         }
 
-        /* Proof Media Layouts */
+        /* Carousel UI Components */
         .carousel-container { 
             position: relative; width: 100%; background-color: #000; 
             border: 8px solid white; box-shadow: 15px 15px 0px rgba(101, 92, 91, 0.1); 
@@ -108,7 +108,7 @@
         .next { right: 0; }
         .prev:hover, .next:hover { background-color: #816B6E; }
 
-        /* Static Proof Container */
+        /* Static Layout Components */
         .static-proof-container {
             width: 100%;
             max-width: 1050px;
@@ -118,7 +118,7 @@
         }
         .static-proof-container img { width: 100%; display: block; }
 
-        /* Section Layout */
+        /* Content Section Styling */
         .content-section { padding: 80px; }
         .section-light { background-color: #E0E2DF; }
         .section-white { background-color: white; }
@@ -133,19 +133,6 @@
         .text-col li { margin-bottom: 10px; }
 
         .proof-col { width: 100%; display: flex; flex-direction: column; align-items: center; }
-
-        /* Figma Link Styling */
-        .demo-section { margin-top: 30px; display: flex; flex-direction: column; align-items: center; width: 100%; }
-        .figma-preview-img { 
-            width: 100%; 
-            max-width: 1050px; 
-            border: 8px solid white; 
-            box-shadow: 15px 15px 0px rgba(101, 92, 91, 0.15); 
-            margin-bottom: 40px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .figma-preview-img:hover { transform: scale(1.01); }
 
         .watch-btn { 
             display: inline-block; padding: 12px 40px; background-color: transparent; 
@@ -210,7 +197,7 @@
                 </div>
                 <div class="proof-col">
                     <div class="static-proof-container">
-                        <img src="BudgetBunny-solution-overview.png" alt="Visual overview of the final BudgetBunny app solution">
+                        <img src="BudgetBunny-solution-overview.png" alt="Visual overview of the BudgetBunny solution">
                     </div>
                 </div>
             </div>
@@ -220,18 +207,14 @@
             <div class="section-title"><h2>Target Personas</h2></div>
             <div class="section-body">
                 <div class="text-col">
-                    <p>Through our collaborative effort, our team developed three primary personas to guide our design decisions:</p>
-                    <ul>
-                        <li><strong>John Cena:</strong> A science student struggling with daily unexpected costs like transportation and late night study snacks.</li>
-                        <li><strong>Pippi Longstockings:</strong> An arts student navigating the structural realities of university life.</li>
-                        <li><strong>Lola Bunny:</strong> A math student primarily concerned with navigating OSAP applications and understanding loan terms.</li>
-                    </ul>
+                    <p>Through our collaborative effort, our team developed three primary personas to guide our design decisions. These personas ensured we addressed the specific pain points identified in our interviews.</p>
                 </div>
                 <div class="proof-col">
                     <div class="carousel-container proof-carousel" id="carousel-personas">
                         <div class="slide-track">
                             <div class="slide"><img src="BB-persona-1.png" alt="John Cena Persona"></div>
                             <div class="slide"><img src="BB-persona-2.png" alt="Lola Bunny Persona"></div>
+                            <div class="slide"><img src="BB-persona-3.png" alt="Pippi Longstockings Persona"></div>
                         </div>
                         <a class="prev" onclick="moveSlide('carousel-personas', -1)">❮</a>
                         <a class="next" onclick="moveSlide('carousel-personas', 1)">❯</a>
@@ -241,6 +224,26 @@
         </section>
 
         <section class="content-section section-light">
+            <div class="section-title"><h2>Design Process</h2></div>
+            <div class="section-body">
+                <div class="text-col">
+                    <p>Our team of 3 followed a rigorous double diamond framework. We successfully fostered a healthy and efficient team environment and attitudes where everyone was comfortable sharing thoughts and opinions. Through productive in person work sessions, we effectively delegated tasks and consistently sought one another's opinions to ensure project cohesion.</p>
+                    <p>This collaborative culture allowed us to seamlessly transition from initial paper sketches and functional requirement mapping to a robust high fidelity Figma prototype showcasing end to end interactions.</p>
+                </div>
+                <div class="proof-col">
+                    <div class="carousel-container proof-carousel" id="carousel-design">
+                        <div class="slide-track">
+                            <div class="slide"><img src="BB-sketches-1.png" alt="Low fidelity paper sketches and task mapping"></div>
+                            <div class="slide"><img src="BB-figma-1.png" alt="High fidelity prototype development in Figma"></div>
+                        </div>
+                        <a class="prev" onclick="moveSlide('carousel-design', -1)">❮</a>
+                        <a class="next" onclick="moveSlide('carousel-design', 1)">❯</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section section-white">
             <div class="section-title"><h2>Visual Identity</h2></div>
             <div class="section-body">
                 <div class="text-col">
@@ -251,33 +254,30 @@
                     </ul>
                 </div>
                 <div class="proof-col">
-                    <div class="carousel-container proof-carousel" id="carousel-identity">
-                        <div class="slide-track">
-                            <div class="slide"><img src="BB-identity-1.png" alt="Color Palette"></div>
-                            <div class="slide"><img src="BB-identity-2.png" alt="Design System Components"></div>
-                        </div>
-                        <a class="prev" onclick="moveSlide('carousel-identity', -1)">❮</a>
-                        <a class="next" onclick="moveSlide('carousel-identity', 1)">❯</a>
+                    <div class="static-proof-container">
+                        <img src="BB-identity-overview.png" alt="Design system and brand assets">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="content-section section-white">
+        <section class="content-section section-light">
             <div class="section-title"><h2>Usability & Testing</h2></div>
             <div class="section-body">
                 <div class="text-col" style="max-width: 100%;">
-                    <p>Following the creation of our high-fidelity prototype, our team of 3 conducted a series of usability tests. We first ran a pilot test to identify potential issues in task clarity. This was followed by five formal usability tests with participants aligned with our personas.</p>
-                    <p>We employed the 10 question System Usability Likert Scale to evaluate efficiency. Insights from these tests led to final improvements such as clarifying labels to reduce cognitive load, increasing button contrast for better visibility, and refining the scholarship tracking display to reduce missed opportunities.</p>
+                    <p>Following the creation of our high-fidelity prototype, our team of 3 conducted five formal usability tests. Using the 10 question System Usability Likert Scale, we evaluated the efficiency of the end to end interaction and verified the clarity of our design decisions.</p>
+                    <p>Key improvements prompted by the testing included clarifying navigational labels to reduce cognitive load and increasing button contrast for accessibility. These iterations ensured the final prototype represented students real world financial needs without the stress of scattered deadlines.</p>
                 </div>
             </div>
         </section>
 
-        <section class="content-section section-light">
+        <section class="content-section section-white">
             <div class="section-title"><h2>Interactive Prototype</h2></div>
             <div class="section-body">
-                <div class="demo-section">
-                    <img src="BudgetBunny-Prototype-Preview.png" alt="BudgetBunny Figma Preview" class="figma-preview-img" onclick="window.open('https://www.figma.com/proto/cRoz83DledyaOkjVEIwPN9/GBDA-210---BudgetBunny?node-id=1-67&starting-point-node-id=1%3A67', '_blank')">
+                <div class="proof-col">
+                    <div class="static-proof-container" style="margin-bottom: 40px; cursor: pointer;" onclick="window.open('https://www.figma.com/proto/cRoz83DledyaOkjVEIwPN9/GBDA-210---BudgetBunny?node-id=1-67&starting-point-node-id=1%3A67', '_blank')">
+                        <img src="BudgetBunny-Prototype-Preview.png" alt="BudgetBunny Figma Preview">
+                    </div>
                     <a href="https://www.figma.com/proto/cRoz83DledyaOkjVEIwPN9/GBDA-210---BudgetBunny?node-id=1-67&starting-point-node-id=1%3A67" target="_blank" class="watch-btn">Launch Live Figma Prototype</a>
                 </div>
             </div>
