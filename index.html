@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornelia Manda | Project | BudgetBunny App Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Reset & Typography */
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; padding: 0;
+            font-family: "Roboto", sans-serif;
+            font-size: 16px; color: #333;
+            background-color: #E0E2DF; line-height: 1.6;
+        }
+
+        h1, h2, h3, a, th { font-family: "Playfair Display", serif; }
+
+        a, a:visited, a:active {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; background-color: #E0E2DF; min-height: 100vh; }
+
+        /* Navigation Area */
+        header {
+            display: grid; grid-template-columns: 30% 70%;
+            align-items: center; background-color: #DDBDBE;
+            padding: 17px 60px; position: relative; z-index: 1000;
+        }
+
+        .logo { 
+            font-family: "Playfair Display", serif;
+            font-size: 1.5em; letter-spacing: 1px; color: #655C5B; 
+        }
+
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: right; }
+        nav li { display: inline-block; margin-left: 40px; position: relative; vertical-align: middle; }
+        nav a { color: #655C5B !important; font-size: 1.1em; display: inline-block; padding: 10px 0; }
+        nav a:hover { color: white !important; cursor: pointer; }
+        nav > ul > li:nth-child(3) > a { color: white !important; }
+
+        .dropdown-content {
+            display: none; position: absolute; background-color: #DDBDBE;
+            min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            z-index: 100; text-align: left; padding: 10px 0; top: 100%; left: 0; margin-top: -5px;
+        }
+        .dropdown-content li { display: block; margin: 0; }
+        .dropdown-content a { color: #655C5B !important; padding: 12px 20px; display: block; font-size: 1.1em; font-family: "Playfair Display", serif; }
+        .dropdown-content a:hover { background-color: #E0E2DF; color: #816B6E !important; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        /* Hero Section */
+        .project-hero { padding: 60px 80px 40px 80px; background-color: white; border-bottom: 1px solid #DDBDBE; }
+        
+        .back-button {
+            display: inline-block; padding: 10px 25px; background-color: #C99B9B;
+            color: white !important; font-weight: bold; margin-bottom: 30px;
+            font-family: "Playfair Display", serif;
+        }
+        .back-button:hover { background-color: #816B6E; transform: rotate(-2deg); }
+
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .hero-text h1 { font-size: 4em; color: #816B6E; margin: 0 0 15px 0; text-transform: uppercase; line-height: 1; }
+        .project-tags { margin-bottom: 20px; }
+        .project-tags span { display: inline-block; padding: 5px 15px; background-color: #F5F5F5; color: #C99B9B; font-weight: 900; font-size: 0.8em; text-transform: uppercase; margin-right: 10px; border-radius: 20px; }
+        .hero-meta { color: #655C5B; font-style: italic; margin-bottom: 20px; font-weight: 500; font-size: 1.1em; }
+
+        .hero-image-container {
+            width: 100%;
+            height: 500px;
+            border: 8px solid white;
+            box-shadow: 15px 15px 0px rgba(101, 92, 91, 0.1);
+            overflow: hidden;
+            background-color: #000;
+        }
+        .hero-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Proof Media Layouts */
+        .carousel-container { 
+            position: relative; width: 100%; background-color: #000; 
+            border: 8px solid white; box-shadow: 15px 15px 0px rgba(101, 92, 91, 0.1); 
+            overflow: hidden; margin: 0 auto;
+        }
+        .proof-carousel { aspect-ratio: 1050 / 590; width: 100%; max-width: 1050px; }
+
+        .slide-track { display: flex; height: 100%; transition: transform 0.5s ease; }
+        .slide { min-width: 100%; height: 100%; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+
+        .prev, .next {
+            cursor: pointer; position: absolute; top: 50%; width: auto; margin-top: -22px;
+            padding: 12px; color: white; font-weight: bold; font-size: 20px;
+            transition: 0.6s ease; user-select: none;
+            background-color: rgba(101, 92, 91, 0.3); z-index: 10;
+        }
+        .next { right: 0; }
+        .prev:hover, .next:hover { background-color: #816B6E; }
+
+        /* Static Proof Container */
+        .static-proof-container {
+            width: 100%;
+            max-width: 1050px;
+            border: 8px solid white;
+            box-shadow: 15px 15px 0px rgba(101, 92, 91, 0.1);
+            background-color: #fff;
+        }
+        .static-proof-container img { width: 100%; display: block; }
+
+        /* Section Layout */
+        .content-section { padding: 80px; }
+        .section-light { background-color: #E0E2DF; }
+        .section-white { background-color: white; }
+
+        .section-title { margin-bottom: 30px; }
+        .section-title h2 { color: #816B6E; font-size: 2.2em; margin: 0; text-transform: uppercase; border-left: 5px solid #C99B9B; padding-left: 20px; line-height: 1; }
+        
+        .section-body { display: flex; flex-direction: column; width: 100%; }
+        .text-col { margin-bottom: 40px; max-width: 1050px; }
+        .text-col p { margin-bottom: 20px; color: #5D4F51; font-size: 1.15em; }
+        .text-col ul { padding-left: 20px; color: #5D4F51; margin-bottom: 20px; }
+        .text-col li { margin-bottom: 10px; }
+
+        .proof-col { width: 100%; display: flex; flex-direction: column; align-items: center; }
+
+        /* Figma Link Styling */
+        .demo-section { margin-top: 30px; display: flex; flex-direction: column; align-items: center; width: 100%; }
+        .figma-preview-img { 
+            width: 100%; 
+            max-width: 1050px; 
+            border: 8px solid white; 
+            box-shadow: 15px 15px 0px rgba(101, 92, 91, 0.15); 
+            margin-bottom: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .figma-preview-img:hover { transform: scale(1.01); }
+
+        .watch-btn { 
+            display: inline-block; padding: 12px 40px; background-color: transparent; 
+            color: #816B6E !important; border: 2px solid #816B6E; text-decoration: none; 
+            font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.2em; 
+            transition: all 0.3s ease; 
+        }
+        .watch-btn:hover { background-color: #816B6E; color: white !important; transform: rotate(-2deg); }
+
+        footer { text-align: center; padding: 40px; color: #655C5B; font-size: 0.9em; border-top: 1px solid #DDBDBE; }
+        .footer-table-wrapper { display: flex; justify-content: center; margin-bottom: 20px; }
+        .footer-table { border-collapse: collapse; text-align: left; }
+        .footer-table th { color: #816B6E; font-size: 1.1em; padding: 5px 10px 5px 0; vertical-align: middle; }
+        .footer-table th:not(:first-child) { padding-left: 30px; }
+        .footer-table td { padding: 5px 0; font-family: "Roboto", sans-serif; white-space: nowrap; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">Cornelia Manda</div>
+            <nav>
+                <ul>
+                    <li><a href="https://cornelia-manda.github.io/home/">Home</a></li>
+                    <li><a href="https://cornelia-manda.github.io/portfolio/">Portfolio</a></li>
+                    <li class="dropdown">
+                        <a href="https://cornelia-manda.github.io/projects/">Projects</a>
+                        <ul class="dropdown-content">
+                            <li><a href="https://cornelia-manda.github.io/videography/">Videography</a></li>
+                            <li><a href="https://cornelia-manda.github.io/branding/">Branding</a></li>
+                            <li><a href="#">Web and App</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://cornelia-manda.github.io/contact-aboutme/">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="project-hero">
+            <a href="https://cornelia-manda.github.io/projects/" class="back-button">← Back to Projects</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="project-tags"><span>UI/UX Design</span><span>Web & App</span></div>
+                    <h1>BUDGETBUNNY</h1>
+                    <p class="hero-meta">UI/UX Designer / Researcher / Interaction Designer</p>
+                    <p>A financial companion for students, designed to demystify OSAP, track hidden costs, and promote financial literacy without the guilt of a traditional calculator.</p>
+                </div>
+                <div class="hero-image-container">
+                    <img src="BudgetBunny-cover.png" alt="BudgetBunny App Cover" class="hero-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section section-light">
+            <div class="section-title"><h2>8 Page Paper: The Problem</h2></div>
+            <div class="section-body">
+                <div class="text-col">
+                    <p>Our team of 3 began with an extensive eight page research phase to understand the systematic neglect of financial literacy in education. We conducted interviews with students across various years of study, including international and first generation students.</p>
+                    <p>Key findings revealed that students felt lost and stressed when trying to align OSAP payments with tuition deadlines. Every participant struggled to understand where their money was going, often only reviewing bank statements after a full year of overspending.</p>
+                </div>
+                <div class="proof-col">
+                    <div class="static-proof-container">
+                        <img src="BudgetBunny-solution-overview.png" alt="Visual overview of the final BudgetBunny app solution">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section section-white">
+            <div class="section-title"><h2>Target Personas</h2></div>
+            <div class="section-body">
+                <div class="text-col">
+                    <p>Through our collaborative effort, our team developed three primary personas to guide our design decisions:</p>
+                    <ul>
+                        <li><strong>John Cena:</strong> A science student struggling with daily unexpected costs like transportation and late night study snacks.</li>
+                        <li><strong>Pippi Longstockings:</strong> An arts student navigating the structural realities of university life.</li>
+                        <li><strong>Lola Bunny:</strong> A math student primarily concerned with navigating OSAP applications and understanding loan terms.</li>
+                    </ul>
+                </div>
+                <div class="proof-col">
+                    <div class="carousel-container proof-carousel" id="carousel-personas">
+                        <div class="slide-track">
+                            <div class="slide"><img src="BB-persona-1.png" alt="John Cena Persona"></div>
+                            <div class="slide"><img src="BB-persona-2.png" alt="Lola Bunny Persona"></div>
+                        </div>
+                        <a class="prev" onclick="moveSlide('carousel-personas', -1)">❮</a>
+                        <a class="next" onclick="moveSlide('carousel-personas', 1)">❯</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section section-light">
+            <div class="section-title"><h2>Visual Identity</h2></div>
+            <div class="section-body">
+                <div class="text-col">
+                    <p>Our team utilized a playful identity to make financial management feel less intimidating. The interface uses a consistent mint green palette to reflect growth and financial health.</p>
+                    <ul>
+                        <li><strong>Typography:</strong> Kantumruy Pro (Sans-Serif)</li>
+                        <li><strong>Palette:</strong> Mint Green (#60E4B2) and Radiant Yellow (#F7D368)</li>
+                    </ul>
+                </div>
+                <div class="proof-col">
+                    <div class="carousel-container proof-carousel" id="carousel-identity">
+                        <div class="slide-track">
+                            <div class="slide"><img src="BB-identity-1.png" alt="Color Palette"></div>
+                            <div class="slide"><img src="BB-identity-2.png" alt="Design System Components"></div>
+                        </div>
+                        <a class="prev" onclick="moveSlide('carousel-identity', -1)">❮</a>
+                        <a class="next" onclick="moveSlide('carousel-identity', 1)">❯</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section section-white">
+            <div class="section-title"><h2>Usability & Testing</h2></div>
+            <div class="section-body">
+                <div class="text-col" style="max-width: 100%;">
+                    <p>Following the creation of our high-fidelity prototype, our team of 3 conducted a series of usability tests. We first ran a pilot test to identify potential issues in task clarity. This was followed by five formal usability tests with participants aligned with our personas.</p>
+                    <p>We employed the 10 question System Usability Likert Scale to evaluate efficiency. Insights from these tests led to final improvements such as clarifying labels to reduce cognitive load, increasing button contrast for better visibility, and refining the scholarship tracking display to reduce missed opportunities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section section-light">
+            <div class="section-title"><h2>Interactive Prototype</h2></div>
+            <div class="section-body">
+                <div class="demo-section">
+                    <img src="BudgetBunny-Prototype-Preview.png" alt="BudgetBunny Figma Preview" class="figma-preview-img" onclick="window.open('https://www.figma.com/proto/cRoz83DledyaOkjVEIwPN9/GBDA-210---BudgetBunny?node-id=1-67&starting-point-node-id=1%3A67', '_blank')">
+                    <a href="https://www.figma.com/proto/cRoz83DledyaOkjVEIwPN9/GBDA-210---BudgetBunny?node-id=1-67&starting-point-node-id=1%3A67" target="_blank" class="watch-btn">Launch Live Figma Prototype</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-table-wrapper">
+                <table class="footer-table">
+                    <tr>
+                        <th>Email:</th><td><a href="mailto:cmanda@uwaterloo.ca">cmanda@uwaterloo.ca</a></td>
+                        <th>School:</th><td><a href="https://uwaterloo.ca/stratford-school-of-interaction-design-and-business/global-business-and-digital-arts" target="_blank">University of Waterloo</a></td>
+                        <th>Location:</th><td>Kitchener-Waterloo, Ontario</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="copyright">&copy; 2026 Cornelia Manda. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const carouselStates = {};
+
+        function moveSlide(id, direction) {
+            if (!carouselStates[id]) carouselStates[id] = 0;
+            const container = document.getElementById(id);
+            const track = container.querySelector('.slide-track');
+            const totalSlides = track.children.length;
+            carouselStates[id] = (carouselStates[id] + direction + totalSlides) % totalSlides;
+            const offset = carouselStates[id] * -100;
+            track.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>
